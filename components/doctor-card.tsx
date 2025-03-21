@@ -36,7 +36,7 @@ export function DoctorCard({ doctor }: DoctorCardProps) {
   const [phone, setPhone] = useState<string>("")
 
   const schedule = async () => {
-    localStorage.setItem(date!.toString(), JSON.stringify(doctor))
+    localStorage.setItem("appoint", JSON.stringify({name: doctor.name, spec: doctor.specialty, date: date!.toString(), img: doctor.image }))
     toast(`${doctor.name} has recieved your request`)
   }
 

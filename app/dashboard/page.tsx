@@ -1,13 +1,10 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 
-import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { Button } from '@/components/ui/button';
-import { generateText } from "ai"
-import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
-import { Ambulance, Heading1, Loader, Plus } from 'lucide-react';
+import { Ambulance, Loader } from 'lucide-react';
 import { toast } from 'sonner';
 
 

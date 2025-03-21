@@ -5,6 +5,7 @@ import { Home, Users, Menu, X, Stethoscope } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { UserButton } from "@clerk/nextjs"
+import { ModeToggle } from "./mode-toggle"
 
 interface SidebarProps {
   isOpen: boolean
