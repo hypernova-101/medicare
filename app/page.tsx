@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { CheckCircle, MessageSquareText, Shield, Stethoscope } from "lucide-react"
+import vid from "@/public/image.png"
 
 import { Button } from "@/components/ui/button"
 import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs"
@@ -12,7 +13,7 @@ export default function Home() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Stethoscope className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold">MediSmart</span>
+            <span className="text-xl font-bold">Medicare</span>
           </div>
           <nav className="hidden md:flex gap-6 items-center">
             <Link href="#features" className="text-sm font-medium hover:text-primary">
@@ -34,7 +35,7 @@ export default function Home() {
               <SignUpButton/>
             </Button>
             <Button size="sm" asChild>
-              <SignInButton/>
+              <SignInButton forceRedirectUrl="/dashboard"/>
             </Button>
             </SignedOut>
             <SignedIn>
@@ -61,22 +62,25 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" className="px-8">
+                  <SignedOut>
+                    <Button size="lg" className="px-8" asChild>
+
+                  <SignUpButton >
                     Check Symptoms Now
-                  </Button>
+                  </SignUpButton>
+                    </Button>
+                  </SignedOut>
                   <Button size="lg" variant="outline" className="px-8">
                     Talk to a Doctor
                   </Button>
                 </div>
               </div>
-              <div className="mx-auto lg:mx-0 relative w-full max-w-[500px] aspect-square rounded-lg overflow-hidden shadow-xl">
+              <div className="mx-auto lg:mx-0 relative w-full flex flex-row justify-center items-center max-w-[500px] aspect-square rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=600&width=600"
-                  alt="AI-powered medical consultation"
+                  src={vid}
                   width={600}
-                  height={600}
-                  className="object-cover"
-                  priority
+                  height={800}
+                  alt="Cover"
                 />
               </div>
             </div>
